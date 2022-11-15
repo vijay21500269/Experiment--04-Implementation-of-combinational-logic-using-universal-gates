@@ -31,13 +31,49 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 ## Program:
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: R.Vijay
+RegisterNumber:  212221230121
 */
-## RTL realization
+~~~
+
+using NAND:
+   module combo1(a,b,c,d,f);
+   input a,b,c,d;
+   output f;
+   wire p,q,r;
+   assign p=(~c & b & a);
+   assign q=(~d & c & ~a);
+   assign r=(c & ~b & a);
+   assign f=(~(~p & ~q & ~r));
+   endmodule
+
+using NOR:
+   module combo2(a,b,c,d,f);
+   input a,b,c,d;
+   output f;
+   wire p,q,r;
+   assign p=( c & ~b & a);
+   assign q=( d & ~c & a);
+   assign r=( c & ~b & a);
+   assign f=(~(~( p | q | r)));
+   endmodule
+ ~~~
 
 ## Output:
+## Using NAND
 ## RTL
+![img](https://github.com/Swathika28/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/blob/main/combo1.PNG)
 ## Timing Diagram
+![img](https://github.com/Swathika28/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/blob/main/combo1%20wave.PNG)
+## Truth table
+![img](https://github.com/Swathika28/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/blob/main/combo1TT.PNG)
+## Using NOR
+## RTL
+![img](https://github.com/Swathika28/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/blob/main/combo2.PNG)\
+## Timing Diagram
+![img](https://github.com/Swathika28/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/blob/main/combo2%20wave.PNG)
+## Truth table
+![img](https://github.com/Swathika28/Experiment--04-Implementation-of-combinational-logic-using-universal-gates/blob/main/combo2TT.PNG)
+
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
